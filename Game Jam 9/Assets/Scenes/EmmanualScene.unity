@@ -1381,6 +1381,11 @@ MonoBehaviour:
   p1: {fileID: 51973346}
   p2: {fileID: 1216844442}
   p3: {fileID: 1034012104}
+  hasHead: 0
+  hasLegs: 0
+  hasArms: 0
+  eyes_only: {fileID: 0}
+  fullbody: {fileID: 0}
 --- !u!1 &1607305789
 GameObject:
   m_ObjectHideFlags: 0
