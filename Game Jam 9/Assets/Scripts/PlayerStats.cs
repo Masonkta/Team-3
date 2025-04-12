@@ -35,10 +35,6 @@ public class PlayerStats : MonoBehaviour
         {
             noiseCollider = noiseColliderTransform.GetComponent<CircleCollider2D>();
         }
-        else
-        {
-            Debug.LogError("No child object named 'noisecollider' found!");
-        }
     }
     void Update()
     {
@@ -50,8 +46,7 @@ public class PlayerStats : MonoBehaviour
 
         if (noiseCollider != null)
         {
-            noiseCollider.radius = noiseLevel;
-            Debug.Log(noiseCollider.radius);
+            noiseCollider.radius = 1 + noiseLevel;
         }
     }
     public void AddNoise(float amount)
