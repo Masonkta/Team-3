@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class PlayerInteractions : MonoBehaviour
 {
-    public float sewTime = 2f;
+    public float sewTime = 3f;
     private Scrollbar progressBar;
     private float sewProgress = 0f;
     private PickUp currItem;
@@ -35,7 +35,12 @@ public class PlayerInteractions : MonoBehaviour
             }
             else if (hasPickUp)
             {
-                clearInteraction();
+                sewProgress -= Time.deltaTime;
+                progressBar.size = progressBar.size = sewProgress / sewTime;
+                if (sewProgress <= 0)
+                {
+                    clearInteraction();
+                }
             }
         }
     }
