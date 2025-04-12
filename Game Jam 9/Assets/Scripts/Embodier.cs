@@ -1,7 +1,8 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class PickUp : MonoBehaviour
+public class Embodier : MonoBehaviour
 {
     public GameObject interactionUI;
     public GameObject errorUI;
@@ -19,16 +20,17 @@ public class PickUp : MonoBehaviour
             playerUpdate = collision.GetComponent<PlayerBodyChanges>();
             pInven = collision.GetComponent<Inventory>();
 
-            if (pInven.carryingPart == false)
+            if (pInven.carryingPart)
             {
-                playerInt.getPickUp(this);
                 interactionUI.SetActive(true);
-            }
+                bodyPartNum = pInven.partNum;
+                playerInt.staticInteract(this);
+            } 
             else
             {
                 errorUI.SetActive(true);
                 playerInt.clearInteraction();
-            }
+            } 
         }
     }
 
@@ -43,9 +45,9 @@ public class PickUp : MonoBehaviour
 
     public void end()
     {
-        playerUpdate.carryPart(bodyPartNum);
-        pInven.addPartItem(bodyPartNum);
-        Destroy(gameObject);
+        Debug.Log("EMBODIER TRIGGERED");
+        playerUpdate.gainPart(bodyPartNum);
+        pInven.removePartItem(bodyPartNum);
     }
 
 }
