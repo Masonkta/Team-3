@@ -30,24 +30,20 @@ public class NoiseTrigger : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("HERE");
         if (!other.CompareTag("Enemy")) return;
 
         EnemyAi enemyAI = other.GetComponent<EnemyAi>();
         enemyAI.StartChasing(transform.root.gameObject);
         PlayMonsterReactionSound();
-        Debug.Log("HERE2");
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
         if (!other.CompareTag("Enemy")) return;
-        Debug.Log("Left HERE");
         EnemyAi enemyAI = other.GetComponent<EnemyAi>();
         if (enemyAI != null)
         {
             enemyAI.StopChasing();
-            Debug.Log("left HERE2");
         }
     }
 
@@ -56,7 +52,6 @@ public class NoiseTrigger : MonoBehaviour
         if (playerStats == null) return;
 
         AudioClip selectedClip = null;
-        Debug.Log("Played HERE");
         switch (playerStats.CurrentNoiseCategory)
         {
             case PlayerStats.NoiseLevelCategory.Low:
@@ -73,7 +68,6 @@ public class NoiseTrigger : MonoBehaviour
         if (selectedClip != null && !audioSource.isPlaying)
         {
             audioSource.PlayOneShot(selectedClip);
-            Debug.Log("Played HERE2");
         }
     }
 }
