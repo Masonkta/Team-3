@@ -4,14 +4,18 @@ using UnityEngine;
 public class PickUp : MonoBehaviour
 {
     public GameObject interactionUI;
-    private PlayerInteractions pi;
+    public int bodyPartNum;
+    private GameObject player;
+    private PlayerInteractions playerInt;
+    private PlayerBodyChanges playerUpdate;
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            pi = collision.GetComponent<PlayerInteractions>();
-            pi.getInteraction(this);
+            playerInt = collision.GetComponent<PlayerInteractions>();
+            playerUpdate = collision.GetComponent<PlayerBodyChanges>();
+            playerInt.getInteraction(this);
             interactionUI.SetActive(true);
         }
     }
@@ -26,6 +30,7 @@ public class PickUp : MonoBehaviour
 
     public void end()
     {
+        playerUpdate.bodyUpate(bodyPartNum);
         Destroy(gameObject);
     }
 
