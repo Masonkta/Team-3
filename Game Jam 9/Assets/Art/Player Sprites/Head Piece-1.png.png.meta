@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7a9ee69b5796d2e48aae256564711766
+guid: f2d79c36fb7272442b9ca860087670e6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4650823298976947902
-    second: Player Model-1.png_0
+      213: -762384600419620515
+    second: Head Piece-1.png_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player Model-1.png_0
+      name: Head Piece-1.png_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 43
-        width: 383
-        height: 702
+        x: 151
+        y: 218
+        width: 280
+        height: 251
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2416e57c9d4f47fb0800000000000000
-      internalID: -4650823298976947902
+      spriteID: d59a2c5ce377b65f0800000000000000
+      internalID: -762384600419620515
       vertices: []
       indices: 
       edges: []
