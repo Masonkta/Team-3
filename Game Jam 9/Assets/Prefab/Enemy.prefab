@@ -49,7 +49,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 0, b: 0, a: 1}
-  m_Intensity: 2
+  m_Intensity: 0.05
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -62,7 +62,7 @@ MonoBehaviour:
   m_NormalMapQuality: 2
   m_UseNormalMap: 0
   m_ShadowsEnabled: 1
-  m_ShadowIntensity: 0.75
+  m_ShadowIntensity: 1
   m_ShadowSoftness: 0.3
   m_ShadowSoftnessFalloffIntensity: 0.5
   m_ShadowVolumeIntensityEnabled: 0
@@ -321,3 +321,9 @@ MonoBehaviour:
   roamSpeed: 0.5
   roamRadius: 10
   roamDelay: 3
+  spotlight: {fileID: 8799025569886661911}
+  noNoiseIntensity: 0.1
+  lowNoiseIntensity: 0.3
+  mediumNoiseIntensity: 0.9
+  highNoiseIntensity: 2
+  lightSmoothness: 5

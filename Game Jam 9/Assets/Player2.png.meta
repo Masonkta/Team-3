@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ad7e13a3534cfbf47b8e75ab461b57d6
+guid: bb4f506602cbc574ca6312450b0eb389
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1410721699624788238
-    second: Player Model Idle-3.png_0
+      213: 3345508739736421500
+    second: Player2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,16 +96,29 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player Model Idle-3.png_0
+      name: Player2_0
       rect:
         serializedVersion: 2
-        x: 106
+        x: 0
         y: 46
-        width: 273
+        width: 383
         height: 702
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -115,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2fedde8a61c1c6ce0800000000000000
-      internalID: -1410721699624788238
+      spriteID: c7444f83972ad6e20800000000000000
+      internalID: 3345508739736421500
       vertices: []
       indices: 
       edges: []

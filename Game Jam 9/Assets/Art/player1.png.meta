@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7a9ee69b5796d2e48aae256564711766
+guid: 45652571fafb7d742bd4927e63396d55
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4650823298976947902
-    second: Player Model-1.png_0
+      213: -4398183398628465896
+    second: player1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,11 +96,24 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player Model-1.png_0
+      name: player1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2416e57c9d4f47fb0800000000000000
-      internalID: -4650823298976947902
+      spriteID: 813eab3608386f2c0800000000000000
+      internalID: -4398183398628465896
       vertices: []
       indices: 
       edges: []

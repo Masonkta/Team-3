@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Experimental.GlobalIllumination;
+using UnityEngine.Rendering.Universal;
 
 public class EnemyAi : MonoBehaviour
 {
@@ -19,13 +21,18 @@ public class EnemyAi : MonoBehaviour
     public float roamRadius = 10f;    
     public float roamDelay = 3f;       
     private Vector3 roamTarget;        
-    private float roamTimer;           
+    private float roamTimer;
 
+    [Header("Light Settings")]
+    public Light2D spotlight;
+    public float noNoiseIntensity = 0.01f;
+    public float lowNoiseIntensity = 0.3f;
+    public float mediumNoiseIntensity = 0.6f;
+    public float highNoiseIntensity = 1f;
+    public float lightSmoothness = 5f;
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-
-        // Disable rotation and up-axis updates
         agent.updateRotation = false;
         agent.updateUpAxis = false;    
         transform.position = new Vector3(transform.position.x, 0f, 0f); 
@@ -36,13 +43,33 @@ public class EnemyAi : MonoBehaviour
     {
         Vector3 currentPosition = transform.position;
         transform.position = new Vector3(currentPosition.x, currentPosition.y, 0f);
-
         if (isChasing && targetPlayer != null)
         {
             Vector3 targetPosition = targetPlayer.transform.position;
             targetPosition.z = transform.position.z;
             agent.SetDestination(targetPosition);
+            if (spotlight != null)
+            {
+                float targetIntensity = spotlight.intensity;
 
+                switch (playerStats.CurrentNoiseCategory)
+                {
+                    case PlayerStats.NoiseLevelCategory.Low:
+                        targetIntensity = lowNoiseIntensity;
+                        break;
+                    case PlayerStats.NoiseLevelCategory.Medium:
+                        targetIntensity = mediumNoiseIntensity;
+                        break;
+                    case PlayerStats.NoiseLevelCategory.High:
+                        targetIntensity = highNoiseIntensity;
+                        break;
+                    case PlayerStats.NoiseLevelCategory.None:
+                        targetIntensity = noNoiseIntensity;
+                        break;
+                }
+
+                spotlight.intensity = Mathf.Lerp(spotlight.intensity, targetIntensity, Time.deltaTime * lightSmoothness);
+            }
             if (playerStats != null)
             {
                 float targetSpeed = agent.speed;
@@ -74,7 +101,7 @@ public class EnemyAi : MonoBehaviour
     void LockRotation()
     {
         Vector3 currentRotation = transform.rotation.eulerAngles;
-        transform.rotation = Quaternion.Euler(0f, 0f, currentRotation.z); // Keep only the Z rotation
+        transform.rotation = Quaternion.Euler(0f, 0f, currentRotation.z);
     }
 
     void Roam()
