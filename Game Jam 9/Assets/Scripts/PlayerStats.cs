@@ -11,6 +11,8 @@ public class PlayerStats : MonoBehaviour
     public float maxNoiseLevel = 10f;
     public float noiseDecayRate = 1f;
     public CircleCollider2D noiseCollider;
+
+
     public enum NoiseLevelCategory
     {
         None,

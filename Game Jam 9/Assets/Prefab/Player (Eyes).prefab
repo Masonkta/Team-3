@@ -199,6 +199,7 @@ GameObject:
   - component: {fileID: 926599311523393342}
   - component: {fileID: 8802013886153404306}
   - component: {fileID: 7198402556581673550}
+  - component: {fileID: 6263386495148422155}
   m_Layer: 0
   m_Name: Player (Eyes)
   m_TagString: Player
@@ -335,7 +336,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 746a50140a44f4dc0a29a1ac60d98a8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sewTime: 3
+  holdTime: 3
 --- !u!114 &7198402556581673550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -351,6 +352,23 @@ MonoBehaviour:
   p1: {fileID: 5040357710595457969}
   p2: {fileID: 5884135151509288831}
   p3: {fileID: 8210231844168622643}
+  hasHead: 0
+  hasLegs: 0
+  hasArms: 0
+--- !u!114 &6263386495148422155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3075252557851111537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7ab705b823104558a7343d6aab91c24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carryingPart: 0
+  partNum: 0
 --- !u!1 &3626871938330652824
 GameObject:
   m_ObjectHideFlags: 0
@@ -549,7 +567,7 @@ Transform:
   m_GameObject: {fileID: 5040357710595457969}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: -0.5, z: 0}
+  m_LocalPosition: {x: 2, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -776,7 +794,7 @@ Transform:
   m_GameObject: {fileID: 5884135151509288831}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.5, z: 0}
+  m_LocalPosition: {x: 2, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -916,7 +934,7 @@ Transform:
   m_GameObject: {fileID: 8210231844168622643}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalPosition: {x: 2, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
