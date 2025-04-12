@@ -4,12 +4,14 @@ using UnityEngine;
 public class PickUp : MonoBehaviour
 {
     public GameObject interactionUI;
-    private bool inRange;
+    private PlayerInteractions pi;
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
+            pi = collision.GetComponent<PlayerInteractions>();
+            pi.getInteraction(this);
             interactionUI.SetActive(true);
         }
     }
@@ -20,6 +22,11 @@ public class PickUp : MonoBehaviour
         {
             interactionUI.SetActive(false);
         }
+    }
+
+    public void end()
+    {
+        Destroy(gameObject);
     }
 
 }
