@@ -6,19 +6,12 @@ public class Simple2DMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 moveInput;
     private Vector2 lastMoveDirection = Vector2.down;
-    public GameObject eyeUp;
-    public GameObject eyeDown;
-    public GameObject eyeLeft;
-    public GameObject eyeRight;
-    public GameObject eyeUpRight;
-    public GameObject eyeUpLeft;
-    public GameObject eyeDownRight;
-    public GameObject eyeDownLeft;
+    public Transform eyeTransform;
+    public float eyeRotationSpeed = 5f;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        SetEyeDirection(lastMoveDirection);
     }
 
     void Update()
@@ -26,10 +19,12 @@ public class Simple2DMovement : MonoBehaviour
         moveInput.x = Input.GetAxisRaw("Horizontal");
         moveInput.y = Input.GetAxisRaw("Vertical");
         moveInput.Normalize();
+
         if (moveInput != Vector2.zero)
         {
-            lastMoveDirection = moveInput.normalized;
+            lastMoveDirection = moveInput;
         }
+
         UpdateEyeDirection();
     }
 
@@ -40,46 +35,8 @@ public class Simple2DMovement : MonoBehaviour
 
     void UpdateEyeDirection()
     {
-        SetEyeDirection(lastMoveDirection);
-    }
-
-    void SetEyeDirection(Vector2 direction)
-    {
-        eyeUp.SetActive(false);
-        eyeDown.SetActive(false);
-        eyeLeft.SetActive(false);
-        eyeRight.SetActive(false);
-        eyeUpRight.SetActive(false);
-        eyeUpLeft.SetActive(false);
-        eyeDownRight.SetActive(false);
-        eyeDownLeft.SetActive(false);
-
-        float threshold = 0.1f;
-
-        if (direction.y > threshold)
-        {
-            if (direction.x > threshold)
-                eyeUpRight.SetActive(true);
-            else if (direction.x < -threshold)
-                eyeUpLeft.SetActive(true);
-            else
-                eyeUp.SetActive(true);
-        }
-        else if (direction.y < -threshold)
-        {
-            if (direction.x > threshold)
-                eyeDownRight.SetActive(true);
-            else if (direction.x < -threshold)
-                eyeDownLeft.SetActive(true);
-            else
-                eyeDown.SetActive(true);
-        }
-        else
-        {
-            if (direction.x > threshold)
-                eyeRight.SetActive(true);
-            else if (direction.x < -threshold)
-                eyeLeft.SetActive(true);
-        }
+        float angle = Mathf.Atan2(lastMoveDirection.y, lastMoveDirection.x) * Mathf.Rad2Deg;
+        Quaternion targetRotation = Quaternion.Euler(0, 0, angle);
+        eyeTransform.rotation = Quaternion.Lerp(eyeTransform.rotation, targetRotation, Time.deltaTime * eyeRotationSpeed);
     }
 }
