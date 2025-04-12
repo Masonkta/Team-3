@@ -1,4 +1,6 @@
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class PlayerBodyChanges : MonoBehaviour
 {
@@ -12,6 +14,8 @@ public class PlayerBodyChanges : MonoBehaviour
     public bool hasArms;
     [Header("Sprites for each combo")]
     public GameObject eyes_only;
+    public GameObject head;
+    public GameObject torso;
     public GameObject fullbody;
 
 
@@ -42,39 +46,82 @@ public class PlayerBodyChanges : MonoBehaviour
             case 1:
                 p1.SetActive(false);
                 hasHead = true;
+                addHead();
                 break;
             case 2:
                 p2.SetActive(false);
                 hasLegs = true;
+                addTorso();
                 break;
             case 3:
                 p3.SetActive(false);
+                addFullBody();
                 hasArms = true;
                 break;
             default:
                 Debug.Log("incorrect body part number");
+                eyesOnly();
                 break;
         }
     }
 
     void Start()
     {
-        eyes_only.SetActive(true);
-        fullbody.SetActive(false);
-        gameObject.GetComponent<CapsuleCollider2D>().size = new Vector2(0.7f, 1f);
-        gameObject.GetComponent<CircleCollider2D>().radius = 0.75f;
-        gameObject.GetComponent<CircleCollider2D>().offset = new Vector2(0.02f, -0.3f);
+        eyesOnly();
     }
 
-    void Update()
+    public void eyesOnly()
     {
-        if (hasArms && hasHead && hasLegs)
-        {
-            eyes_only.SetActive(false);
-            fullbody.SetActive(true);
-            gameObject.GetComponent<CapsuleCollider2D>().size = new Vector2(1.3f, 3.5f);
-            gameObject.GetComponent<CircleCollider2D>().radius = 1.5f;
-            gameObject.GetComponent<CircleCollider2D>().offset = new Vector2(0.02f, -0.7f);
-        }
+        eyes_only.SetActive(true);
+        head.SetActive(false);
+        torso.SetActive(false);
+        fullbody.SetActive(false);
+        // adjust hitbox
+        gameObject.GetComponent<CapsuleCollider2D>().size = new Vector2(0.8f, 0.1f);
+        gameObject.GetComponent<CapsuleCollider2D>().offset = new Vector2(0.055f, -0.25f);
+        // adjust interact zone
+        gameObject.GetComponent<CircleCollider2D>().radius = 0.7f;
+        gameObject.GetComponent<CircleCollider2D>().offset = new Vector2(0, -0.3f);
+    }
+    public void addHead()
+    {
+        eyes_only.SetActive(false);
+        head.SetActive(true);
+        torso.SetActive(false);
+        fullbody.SetActive(false);
+        // adjust hitbox
+        gameObject.GetComponent<CapsuleCollider2D>().size = new Vector2(0.7f, 0.9f);
+        gameObject.GetComponent<CapsuleCollider2D>().offset = new Vector2(0.04f, -0.05f);
+        // adjust interact zone
+        gameObject.GetComponent<CircleCollider2D>().radius = 0.7f;
+        gameObject.GetComponent<CircleCollider2D>().offset = new Vector2(0.035f, -0.1f);
+    }
+    public void addTorso()
+    {
+        eyes_only.SetActive(false);
+        head.SetActive(false);
+        torso.SetActive(true);
+        fullbody.SetActive(false);
+        // adjust hitbox
+        gameObject.GetComponent<CapsuleCollider2D>().size = new Vector2(0.9f, 2.2f);
+        gameObject.GetComponent<CapsuleCollider2D>().offset = new Vector2(0.045f, -0.07f);
+        // adjust interact zone
+        gameObject.GetComponent<CircleCollider2D>().radius = 0.95f;
+        gameObject.GetComponent<CircleCollider2D>().offset = new Vector2(0.03f, -0.35f);
+        // adjust sight light
+        //gameObject.GetComponent<Light2D>().transform.position = new Vector3(-0.2f, 0f);
+    }
+    public void addFullBody()
+    {
+        eyes_only.SetActive(false);
+        head.SetActive(false);
+        torso.SetActive(false);
+        fullbody.SetActive(true);
+        // adjust hitbox
+        gameObject.GetComponent<CapsuleCollider2D>().size = new Vector2(0.9f, 2.25f);
+        gameObject.GetComponent<CapsuleCollider2D>().offset = new Vector2(0.04f, -0.55f);
+        // adjust interact zone
+        gameObject.GetComponent<CircleCollider2D>().radius = 0.95f;
+        gameObject.GetComponent<CircleCollider2D>().offset = new Vector2(0.03f, -0.35f);
     }
 }
