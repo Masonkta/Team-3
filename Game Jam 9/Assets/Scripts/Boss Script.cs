@@ -15,6 +15,8 @@ public class BossScript : MonoBehaviour
     public float mediumNoiseSpeed = 2.5f;
     public float highNoiseSpeed = 4f;
     public float speedSmoothness = 5f;
+    public float damageCooldown = 1f;
+    private float nextDamageTime = 0f;
 
     [Header("Roaming Settings")]
     public float roamSpeed = .5f;
@@ -161,6 +163,22 @@ public class BossScript : MonoBehaviour
             if (playerStats != null)
             {
                 playerStats.TakeDamage(1f); 
+            }
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            if (collision.CompareTag("Player") && Time.time >= nextDamageTime)
+            {
+                PlayerStats playerStats = collision.GetComponent<PlayerStats>();
+                if (playerStats != null)
+                {
+                    playerStats.TakeDamage(10f);
+                    nextDamageTime = Time.time + damageCooldown;
+                }
             }
         }
     }
