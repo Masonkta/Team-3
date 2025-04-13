@@ -49,7 +49,7 @@ public class PlayerInteractions : MonoBehaviour
                         currItem.end();
                         clearInteraction();
                     }
-                    //SoundManager.instance.play("Rummaging");
+                    SoundManager.instance.Play("Rummaging");
                 }
                 else if (hasPickUp)
                 {
@@ -98,7 +98,7 @@ public class PlayerInteractions : MonoBehaviour
                     {
                         clearInteraction();
                     }
-                    //SoundManager.instance.play("Stitching");
+                    SoundManager.instance.Play("Stitching");
                 }
             }
         }
