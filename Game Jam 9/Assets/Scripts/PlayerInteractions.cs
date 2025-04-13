@@ -1,4 +1,5 @@
 using Unity.Multiplayer.Center.Common.Analytics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,8 +10,10 @@ public class PlayerInteractions : MonoBehaviour
     private float holdProg = 0f;
     private PickUp currItem;
     private Embodier curInteractable;
+    private FinalDoor door;
     private bool hasPickUp = false;
     private bool isPickUp = false;
+    private bool finalDoor = false;
     private Inventory inven;
 
     void Start()
@@ -19,6 +22,14 @@ public class PlayerInteractions : MonoBehaviour
     }
     void Update()
     {
+        if (finalDoor)
+        {
+            if (Input.GetKey(KeyCode.E))
+            {
+                door.end();
+                clearInteraction();
+            }
+        }
         if (isPickUp) {
             if (currItem != null)
             {
@@ -38,7 +49,7 @@ public class PlayerInteractions : MonoBehaviour
                         currItem.end();
                         clearInteraction();
                     }
-                    SoundManager.instance.Play("Rummaging");
+                    //SoundManager.instance.play("Rummaging");
                 }
                 else if (hasPickUp)
                 {
@@ -87,6 +98,7 @@ public class PlayerInteractions : MonoBehaviour
                     {
                         clearInteraction();
                     }
+                    //SoundManager.instance.play("Stitching");
                 }
             }
         }
@@ -110,6 +122,13 @@ public class PlayerInteractions : MonoBehaviour
         progressBar = emb.interactionUI.GetComponentInChildren<Scrollbar>();
         progressBar.size = 0;
         holdProg = 0;
+    }
+    public void finaDoor(FinalDoor door)
+    {
+        Debug.Log("item recieved");
+        this.door = door;
+        finalDoor = true;
+        isPickUp = false;
     }
     public void clearInteraction()
     {
