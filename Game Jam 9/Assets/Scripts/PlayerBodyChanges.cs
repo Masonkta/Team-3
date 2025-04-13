@@ -15,6 +15,7 @@ public class PlayerBodyChanges : MonoBehaviour
     [Header("Sprites for each combo")]
     public GameObject eyes_only;
     public GameObject head;
+    public GameObject torsoHead;
     public GameObject torso;
     public GameObject fullbody;
 
@@ -69,11 +70,32 @@ public class PlayerBodyChanges : MonoBehaviour
     {
         eyesOnly();
     }
+    void Update()
+    {
+        if(!hasHead && hasLegs && !hasArms)
+        {
+            addTorso();
+        }
+        else if (hasHead && hasLegs && !hasArms)
+        {
+            addTorsoHead();
+        }
+        else if (hasHead && !hasLegs && !hasArms)
+        {
+            addHead();
+        }
+        else if (hasHead && hasLegs && hasArms)
+        {
+            addFullBody();
+        }
+        else { eyesOnly(); }
+    }
 
     public void eyesOnly()
     {
         eyes_only.SetActive(true);
         head.SetActive(false);
+        torsoHead.SetActive(false);
         torso.SetActive(false);
         fullbody.SetActive(false);
         // adjust hitbox
@@ -87,6 +109,7 @@ public class PlayerBodyChanges : MonoBehaviour
     {
         eyes_only.SetActive(false);
         head.SetActive(true);
+        torsoHead.SetActive(false);
         torso.SetActive(false);
         fullbody.SetActive(false);
         // adjust hitbox
@@ -96,10 +119,27 @@ public class PlayerBodyChanges : MonoBehaviour
         gameObject.GetComponent<CircleCollider2D>().radius = 0.7f;
         gameObject.GetComponent<CircleCollider2D>().offset = new Vector2(0.035f, -0.1f);
     }
+    public void addTorsoHead()
+    {
+        eyes_only.SetActive(false);
+        head.SetActive(false);
+        torsoHead.SetActive(true);
+        torso.SetActive(false);
+        fullbody.SetActive(false);
+        // adjust hitbox
+        gameObject.GetComponent<CapsuleCollider2D>().size = new Vector2(0.9f, 2.2f);
+        gameObject.GetComponent<CapsuleCollider2D>().offset = new Vector2(0.045f, -0.07f);
+        // adjust interact zone
+        gameObject.GetComponent<CircleCollider2D>().radius = 0.95f;
+        gameObject.GetComponent<CircleCollider2D>().offset = new Vector2(0.03f, -0.35f);
+        // adjust sight light
+        //gameObject.GetComponent<Light2D>().transform.position = new Vector3(-0.2f, 0f);
+    }
     public void addTorso()
     {
         eyes_only.SetActive(false);
         head.SetActive(false);
+        torsoHead.SetActive(false);
         torso.SetActive(true);
         fullbody.SetActive(false);
         // adjust hitbox
@@ -115,6 +155,7 @@ public class PlayerBodyChanges : MonoBehaviour
     {
         eyes_only.SetActive(false);
         head.SetActive(false);
+        torsoHead.SetActive(false);
         torso.SetActive(false);
         fullbody.SetActive(true);
         // adjust hitbox
