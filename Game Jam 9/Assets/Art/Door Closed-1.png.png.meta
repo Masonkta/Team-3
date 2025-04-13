@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b931baaeb7803a44eb34fe9bac416d3f
+guid: 468438d3acaa67449ae4d9216d331eef
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7465751130952165512
-    second: corner-1.png (1)_0
+      213: -681681023352871488
+    second: Door Closed-1.png_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,12 +46,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 15
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: corner-1.png (1)_0
+      name: Door Closed-1.png_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 256
-        height: 256
+        x: 13
+        y: 15
+        width: 29
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8771022d6e2546890800000000000000
-      internalID: -7465751130952165512
+      spriteID: 0c56de098be2a86f0800000000000000
+      internalID: -681681023352871488
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      corner-1.png (1)_0: -7465751130952165512
+      Door Closed-1.png_0: -681681023352871488
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
