@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b009451112bb5844db05cfa6b64b6310
+guid: 7e90093cd5749294dae937897c83ff71
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6922188943878791809
-    second: EyeBall-1.png (2)_0
+      213: 497393524659572272
+    second: New Piskel-1.png-1.png (12)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -43,10 +43,10 @@ TextureImporter:
     wrapU: 1
     wrapV: 1
     wrapW: 1
-  nPOTScale: 2
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -57,7 +57,7 @@ TextureImporter:
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 7
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -72,7 +72,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 4096
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: EyeBall-1.png (2)_0
+      name: New Piskel-1.png-1.png (12)_0
       rect:
         serializedVersion: 2
-        x: 127
-        y: 139
-        width: 170
-        height: 162
+        x: 49
+        y: 39
+        width: 102
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f7dd7f3b4d17fef90800000000000000
-      internalID: -6922188943878791809
+      spriteID: 03ec9ee76c817e600800000000000000
+      internalID: 497393524659572272
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      New Piskel-1.png-1.png (12)_0: 497393524659572272
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

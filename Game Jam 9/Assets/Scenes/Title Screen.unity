@@ -619,6 +619,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 849515402}
   m_CullTransparentMesh: 1
+--- !u!1 &937055246
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 937055249}
+  - component: {fileID: 937055248}
+  - component: {fileID: 937055247}
+  m_Layer: 5
+  m_Name: Cursor Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &937055247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937055246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 3ba0d19258c3a0b419f65acc2126b1c3, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &937055248
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937055246}
+  m_CullTransparentMesh: 1
+--- !u!224 &937055249
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937055246}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1860131648}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 150, y: 150}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1147363172
 GameObject:
   m_ObjectHideFlags: 0
@@ -776,7 +851,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1558950260}
   - component: {fileID: 1558950259}
-  - component: {fileID: 1558950261}
   m_Layer: 0
   m_Name: UI System
   m_TagString: Untagged
@@ -812,22 +886,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1558950261
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1558950258}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b69142a8317a96742a4ec922f8de488d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  defaultCursor: {fileID: 2800000, guid: b009451112bb5844db05cfa6b64b6310, type: 3}
-  clickCursor: {fileID: 2800000, guid: 2a0ebfde0be3e0347afc0837f34cf9b2, type: 3}
-  hotspot: {x: 0, y: 0}
-  cursorMode: 0
 --- !u!1 &1860131644
 GameObject:
   m_ObjectHideFlags: 0
@@ -840,6 +898,7 @@ GameObject:
   - component: {fileID: 1860131647}
   - component: {fileID: 1860131646}
   - component: {fileID: 1860131645}
+  - component: {fileID: 1860131649}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -926,6 +985,7 @@ RectTransform:
   - {fileID: 1147363173}
   - {fileID: 628126715}
   - {fileID: 849515403}
+  - {fileID: 937055249}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -933,6 +993,28 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1860131649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1860131644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b69142a8317a96742a4ec922f8de488d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idleCursorSprite: {fileID: 21300000, guid: 3ba0d19258c3a0b419f65acc2126b1c3, type: 3}
+  movingCursorSprite: {fileID: 21300000, guid: f8b0c35e69375304c86d54d24369a524, type: 3}
+  clickCursorSprite: {fileID: 21300000, guid: 5e227fb1ac9712544b344a7b9284eca5, type: 3}
+  cursorImage: {fileID: 937055249}
+  cursorImageComponent: {fileID: 937055247}
+  canvas: {fileID: 1860131647}
+  rotationSpeed: 20
+  movementThreshold: 0.5
+  movementLingerTime: 0.2
+  spriteRotationOffset: 0
 --- !u!1 &2124302913
 GameObject:
   m_ObjectHideFlags: 0
