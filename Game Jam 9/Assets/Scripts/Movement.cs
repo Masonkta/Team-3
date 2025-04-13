@@ -53,7 +53,6 @@ public class Movement : MonoBehaviour
         }
 
         light2d.transform.localScale = new Vector3(1, 1, 1);
-
     }
     void FixedUpdate()
     {

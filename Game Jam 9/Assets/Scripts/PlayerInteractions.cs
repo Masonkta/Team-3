@@ -39,6 +39,7 @@ public class PlayerInteractions : MonoBehaviour
                         currItem.end();
                         clearInteraction();
                     }
+                    SoundManager.instance.Play("Rummaging");
                 }
                 else if (hasPickUp)
                 {

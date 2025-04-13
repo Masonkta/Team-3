@@ -70,6 +70,7 @@ public class PlayerStats : MonoBehaviour
     public void TakeDamage(float amount)
     {
         Health -= amount;
+        SoundManager.instance.Play("PlayerHurt");
         if (Health <= 0f)
         {
             Die();
@@ -77,6 +78,7 @@ public class PlayerStats : MonoBehaviour
     }
     private void Die()
     {
+        SoundManager.instance.Play("PlayerDeath");
         Debug.Log("Player died!");
     }
 }
