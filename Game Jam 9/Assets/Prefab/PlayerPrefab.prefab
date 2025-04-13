@@ -243,7 +243,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 5
   m_Sprite: {fileID: 4467666215260348427, guid: a6558de97d92bd247ad6ee8545082a6a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -414,7 +414,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 5
   m_Sprite: {fileID: 4467666215260348427, guid: a6558de97d92bd247ad6ee8545082a6a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -437,6 +437,7 @@ GameObject:
   - component: {fileID: 8563269357234067115}
   - component: {fileID: 8702869304892555358}
   - component: {fileID: 3386999174176850865}
+  - component: {fileID: 3946450150767051019}
   m_Layer: 0
   m_Name: Noise Collider
   m_TagString: Untagged
@@ -510,8 +511,106 @@ MonoBehaviour:
   lowNoiseClip: {fileID: 8300000, guid: 98fda217f302dc34f970816a1c661f0d, type: 3}
   mediumNoiseClip: {fileID: 8300000, guid: e02e8ae03e99083469b5feddb730f7fe, type: 3}
   highNoiseClip: {fileID: 8300000, guid: c384c45a36868fa47847ab8357e3428a, type: 3}
-  audioSource: {fileID: 0}
-  playerStats: {fileID: 0}
+  audioSource: {fileID: 3946450150767051019}
+  playerStats: {fileID: 7171094853071479648}
+  targetPlayer: {fileID: 5596984145977135533}
+--- !u!82 &3946450150767051019
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2007112458647496507}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &2447785830792397171
 GameObject:
   m_ObjectHideFlags: 0
@@ -608,11 +707,11 @@ GameObject:
   - component: {fileID: 1246217292683861313}
   m_Layer: 0
   m_Name: EyesOnly
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3504072124432344215
 Transform:
   m_ObjectHideFlags: 0
@@ -672,7 +771,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 5
   m_Sprite: {fileID: 4747072396874386302, guid: 1e94e19836d973140a0c5175f7630b31, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -730,7 +829,7 @@ GameObject:
   - component: {fileID: 1989752191817148595}
   m_Layer: 0
   m_Name: Eyes
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -793,7 +892,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 5
   m_Sprite: {fileID: 4747072396874386302, guid: 1e94e19836d973140a0c5175f7630b31, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1204,8 +1303,8 @@ MonoBehaviour:
   p1: {fileID: 5492042791621420140}
   p2: {fileID: 6372013817655644322}
   p3: {fileID: 8662057250336146926}
-  hasHead: 0
-  hasLegs: 0
+  hasHead: 1
+  hasLegs: 1
   hasArms: 0
   eyes_only: {fileID: 2551333823622469548}
   head: {fileID: 7738054973300264625}
@@ -1259,6 +1358,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3
+  sprintSpeed: 4
+  playerBody: {fileID: 3086523392998246566}
+  isSprinting: 0
+  staminaDrainRate: 10
+  staminaRegenRate: 5
+  sprintCooldownTime: 2
   light2d: {fileID: 450593344580404710}
   noisePerSecondWhileMoving: 1.5
 --- !u!1 &5680046898081544453
@@ -1273,11 +1378,11 @@ GameObject:
   - component: {fileID: 559271949979807997}
   m_Layer: 0
   m_Name: Full_Body
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4261365643242353529
 Transform:
   m_ObjectHideFlags: 0
@@ -1337,7 +1442,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 5
   m_Sprite: {fileID: -4398183398628465896, guid: fdcff3957fca8fe42a91e8cbfbd5f951, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1633,7 +1738,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 5
   m_Sprite: {fileID: -762384600419620515, guid: f2d79c36fb7272442b9ca860087670e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1944,7 +2049,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 5
   m_Sprite: {fileID: -762384600419620515, guid: f2d79c36fb7272442b9ca860087670e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

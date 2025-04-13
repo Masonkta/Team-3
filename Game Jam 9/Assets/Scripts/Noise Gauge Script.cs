@@ -33,7 +33,6 @@ public class NoiseGaugeScript : MonoBehaviour
         {
             angle = -220f;
         }
-        Debug.Log(angle);
 
         needle.rectTransform.localRotation = Quaternion.Euler(0f, 0f, angle);
     }

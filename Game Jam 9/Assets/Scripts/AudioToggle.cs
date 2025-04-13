@@ -2,10 +2,17 @@ using UnityEngine;
 
 public class AudioToggle : MonoBehaviour
 {
-    public bool hasHead = false;
+    public PlayerBodyChanges body;
 
     void Update()
     {
-        AudioListener.pause = !hasHead;
+        if (!body.hasHead) {
+            AudioListener.volume = 0f;
+        }
+        else
+        {
+            float savedVolume = PlayerPrefs.GetFloat("MasterVolume", 1f);
+            AudioListener.volume = savedVolume;
+        }
     }
 }

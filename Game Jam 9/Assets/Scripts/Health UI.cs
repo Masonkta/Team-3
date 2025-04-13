@@ -30,13 +30,11 @@ public class HealthUI : MonoBehaviour
     void UpdateHealthBar()
     {
         float healthNormalized = Mathf.Clamp01(stats.Health / stats.MaxHealth);
-        Debug.Log(healthNormalized);
         healthbar.value = healthNormalized;
     }
     void UpdateStaminaBar()
     {
         float staminaNormalized = Mathf.Clamp01(stats.Stamina / stats.MaxStamina);
-        Debug.Log(staminaNormalized);
         staminabar.value = staminaNormalized;
     }
 
