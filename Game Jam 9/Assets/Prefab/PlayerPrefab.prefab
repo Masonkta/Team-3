@@ -507,9 +507,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fda9ca1b6e405124599e93e8f79c5b61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lowNoiseClip: {fileID: 0}
-  mediumNoiseClip: {fileID: 0}
-  highNoiseClip: {fileID: 0}
+  lowNoiseClip: {fileID: 8300000, guid: 98fda217f302dc34f970816a1c661f0d, type: 3}
+  mediumNoiseClip: {fileID: 8300000, guid: e02e8ae03e99083469b5feddb730f7fe, type: 3}
+  highNoiseClip: {fileID: 8300000, guid: c384c45a36868fa47847ab8357e3428a, type: 3}
   audioSource: {fileID: 0}
   playerStats: {fileID: 0}
 --- !u!1 &2447785830792397171
@@ -965,7 +965,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
   m_Color: {r: 0.49411765, g: 1, b: 0.78431374, a: 1}
   m_FlipX: 0
@@ -1258,9 +1258,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4e6fd60ff4a9264a9fc04ae1e0a38bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
+  moveSpeed: 3
   light2d: {fileID: 450593344580404710}
-  noisePerSecondWhileMoving: 0.1
+  noisePerSecondWhileMoving: 1.5
 --- !u!1 &5680046898081544453
 GameObject:
   m_ObjectHideFlags: 0
@@ -1273,7 +1273,7 @@ GameObject:
   - component: {fileID: 559271949979807997}
   m_Layer: 0
   m_Name: Full_Body
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1425,7 +1425,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 3625043607559282579, guid: 19fb86013d8c24d6cb8410c0aadf30fa, type: 3}
   m_Color: {r: 0.49411765, g: 1, b: 0.78431374, a: 1}
   m_FlipX: 0
@@ -1721,7 +1721,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -712631045867808456, guid: b670ab75dde984907b8570040daa08c5, type: 3}
   m_Color: {r: 0.49411765, g: 1, b: 0.78431374, a: 1}
   m_FlipX: 0
