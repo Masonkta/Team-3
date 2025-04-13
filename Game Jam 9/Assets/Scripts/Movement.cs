@@ -11,7 +11,6 @@ public class Movement : MonoBehaviour
 
     [Header("Light Tracking")]
     public Light2D light2d;
-    //public float eyeRotationSpeed = 5f;
 
     [Header("Noise Settings")]
     public float noisePerSecondWhileMoving = .1f;
@@ -40,18 +39,16 @@ public class Movement : MonoBehaviour
             }
 
             float angle = Mathf.Atan2(moveInput.y, moveInput.x) * Mathf.Rad2Deg;
-            light2d.transform.rotation = Quaternion.Euler(0, 0, angle - 90f); // adjust offset if needed
+            light2d.transform.rotation = Quaternion.Euler(0, 0, angle - 90f); 
 
         }
 
         if (moveInput.x < 0)
         {
-            // goin left
             transform.localScale = new Vector3(-1.5f, 1.5f, 1.5f);
         }
         else if (moveInput.x > 0)
         {
-            // goin right
             transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
         }
 
@@ -62,10 +59,5 @@ public class Movement : MonoBehaviour
     {
         rb.linearVelocity = moveInput * moveSpeed;
     }
-    /*void UpdateEyeDirection()
-    {
-        float angle = Mathf.Atan2(lastMoveDirection.y, lastMoveDirection.x) * Mathf.Rad2Deg;
-        Quaternion targetRotation = Quaternion.Euler(0, 0, angle);
-        eyeTransform.rotation = Quaternion.Lerp(eyeTransform.rotation, targetRotation, Time.deltaTime * eyeRotationSpeed);
-    }*/
+
 }

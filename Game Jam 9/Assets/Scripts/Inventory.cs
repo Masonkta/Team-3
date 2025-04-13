@@ -4,7 +4,6 @@ public class Inventory : MonoBehaviour
 {
     public bool carryingPart;
     public int partNum;
-
     public void addPartItem(int num)
     {
         carryingPart = true;

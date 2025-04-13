@@ -32,13 +32,10 @@ public class DoorScript : MonoBehaviour
         {
             uiText = interactionUI.GetComponentInChildren<Text>();
             if (progressBar != null) progressBar.size = 0f;
-
-            Debug.Log("UI text and progress bar found and assigned.");
         }
 
         UpdateDoorState(false);
     }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -51,7 +48,6 @@ public class DoorScript : MonoBehaviour
             UpdateUI();
         }
     }
-
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -72,12 +68,10 @@ public class DoorScript : MonoBehaviour
             interactionUI?.SetActive(false);
             return;
         }
-
-        // Ensure UI is always visible while in range
         if (!interactionUI.activeSelf)
             interactionUI.SetActive(true);
 
-        UpdateUI(); // Keep the UI updated with current state
+        UpdateUI(); 
 
         if (playerBody.hasArms)
         {
@@ -110,7 +104,6 @@ public class DoorScript : MonoBehaviour
             }
         }
     }
-
     private void ToggleDoor()
     {
         UpdateDoorState(!isOpen);
@@ -139,7 +132,6 @@ public class DoorScript : MonoBehaviour
         }
 
     }
-
     private void ResetHold()
     {
         isHolding = false;

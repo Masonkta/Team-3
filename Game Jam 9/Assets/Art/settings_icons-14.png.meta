@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 8f7f1b4acd0cf614db80dbce09426e58
+guid: 0054dd60b2c47784780def53628c70c0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4135270522249554001
-    second: Grim Reaper-1.png_0
+      213: 7116538350886603852
+    second: settings_icons-14_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Grim Reaper-1.png_0
+      name: settings_icons-14_0
       rect:
         serializedVersion: 2
-        x: 120
-        y: 34
-        width: 813
-        height: 1425
+        x: 180
+        y: 256
+        width: 1719
+        height: 297
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fa7db2f9e519c96c0800000000000000
-      internalID: -4135270522249554001
+      spriteID: c4c4a03dce503c260800000000000000
+      internalID: 7116538350886603852
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Grim Reaper-1.png_0: -4135270522249554001
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

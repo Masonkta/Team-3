@@ -25,15 +25,14 @@ public class Embodier : MonoBehaviour
                 interactionUI.SetActive(true);
                 bodyPartNum = pInven.partNum;
                 playerInt.staticInteract(this);
-            } 
+            }
             else
             {
                 errorUI.SetActive(true);
                 playerInt.clearInteraction();
-            } 
+            }
         }
     }
-
     void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -42,12 +41,10 @@ public class Embodier : MonoBehaviour
             errorUI.SetActive(false);
         }
     }
-
     public void end()
     {
         Debug.Log("EMBODIER TRIGGERED");
         playerUpdate.gainPart(bodyPartNum);
         pInven.removePartItem(bodyPartNum);
     }
-
 }

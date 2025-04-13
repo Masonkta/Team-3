@@ -30,11 +30,18 @@ public class NoiseTrigger : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.CompareTag("Enemy")) return;
+        if (other.CompareTag("Enemy"))
+        {
+            EnemyAi enemyAI = other.GetComponent<EnemyAi>();
+            enemyAI.StartChasing(transform.root.gameObject);
+            PlayMonsterReactionSound();
+        }
 
-        EnemyAi enemyAI = other.GetComponent<EnemyAi>();
-        enemyAI.StartChasing(transform.root.gameObject);
-        PlayMonsterReactionSound();
+        if (other.CompareTag("Boss")) {
+            BossScript BossAi = other.GetComponent<BossScript>();
+            BossAi.StartChasing(transform.root.gameObject);
+            PlayMonsterReactionSound();
+        }
     }
 
     void OnTriggerExit2D(Collider2D other)

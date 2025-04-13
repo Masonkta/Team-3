@@ -17,8 +17,8 @@ public class RotatingCursor : MonoBehaviour
     [Header("Settings")]
     public float rotationSpeed = 20f;
     public float movementThreshold = 0.5f;
-    public float movementLingerTime = 0.2f; // How long to keep the movement cursor visible
-    public float spriteRotationOffset = -90f; // Adjust if your sprite faces right by default
+    public float movementLingerTime = 0.2f; 
+    public float spriteRotationOffset = -90f; 
 
     private Vector3 lastMousePosition;
     private Vector2 moveDirection;
@@ -26,8 +26,7 @@ public class RotatingCursor : MonoBehaviour
 
     void Start()
     {
-        // Keep the system cursor active and invisible
-        Cursor.visible = false; // Hide the system cursor but keep it active for UI events
+        Cursor.visible = false;
         lastMousePosition = Input.mousePosition;
         SetCursor(idleCursorSprite, false);
     }
@@ -36,8 +35,6 @@ public class RotatingCursor : MonoBehaviour
     {
         Vector3 currentMousePosition = Input.mousePosition;
         Vector2 delta = currentMousePosition - lastMousePosition;
-
-        // Move UI cursor to mouse position
         Vector2 localPoint;
         RectTransformUtility.ScreenPointToLocalPointInRectangle(
             canvas.transform as RectTransform,
@@ -50,7 +47,6 @@ public class RotatingCursor : MonoBehaviour
         bool isClicking = Input.GetMouseButton(0);
         bool isMoving = delta.sqrMagnitude > movementThreshold;
 
-        // Update movement timer and direction
         if (isMoving)
         {
             moveDirection = delta.normalized;
@@ -61,18 +57,15 @@ public class RotatingCursor : MonoBehaviour
             movementTimer -= Time.deltaTime;
         }
 
-        // Priority 1: Clicking (no rotation)
         if (isClicking)
         {
             SetCursor(clickCursorSprite, false);
         }
-        // Priority 2: Moving (or recently moved)
         else if (movementTimer > 0f)
         {
             float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg + spriteRotationOffset;
             SetCursor(movingCursorSprite, true, angle);
         }
-        // Priority 3: Idle
         else
         {
             SetCursor(idleCursorSprite, false);

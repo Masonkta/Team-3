@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: 8f7f1b4acd0cf614db80dbce09426e58
+guid: 3f29b9a7ac613d4418a96535eede411b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4135270522249554001
-    second: Grim Reaper-1.png_0
+      213: 2909209702923858318
+    second: settings_icons-19_0
+  - first:
+      213: 6164954740490113029
+    second: settings_icons-19_1
+  - first:
+      213: 3004529758356946017
+    second: settings_icons-19_2
+  - first:
+      213: -7560777004927710645
+    second: settings_icons-19_3
+  - first:
+      213: -4759643248143658910
+    second: settings_icons-19_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +125,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Grim Reaper-1.png_0
+      name: settings_icons-19_0
       rect:
         serializedVersion: 2
-        x: 120
-        y: 34
-        width: 813
-        height: 1425
+        x: 152
+        y: 152
+        width: 25
+        height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +140,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fa7db2f9e519c96c0800000000000000
-      internalID: -4135270522249554001
+      spriteID: e8175e7afc69f5820800000000000000
+      internalID: 2909209702923858318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: settings_icons-19_1
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 114
+        width: 50
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50016435ca15e8550800000000000000
+      internalID: 6164954740490113029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: settings_icons-19_2
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 164
+        width: 15
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16cb4f385eb32b920800000000000000
+      internalID: 3004529758356946017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: settings_icons-19_3
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 150
+        width: 21
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4a875b6f59b21790800000000000000
+      internalID: -7560777004927710645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: settings_icons-19_4
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 137
+        width: 29
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2609fc8fea952fdb0800000000000000
+      internalID: -4759643248143658910
       vertices: []
       indices: 
       edges: []
@@ -147,8 +247,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Grim Reaper-1.png_0: -4135270522249554001
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

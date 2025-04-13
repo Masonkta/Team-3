@@ -3,7 +3,7 @@ using UnityEngine.AI;
 using UnityEngine.Experimental.GlobalIllumination;
 using UnityEngine.Rendering.Universal;
 
-public class EnemyAi : MonoBehaviour
+public class BossScript : MonoBehaviour
 {
     public NavMeshAgent agent;
     public GameObject targetPlayer;
@@ -17,10 +17,10 @@ public class EnemyAi : MonoBehaviour
     public float speedSmoothness = 5f;
 
     [Header("Roaming Settings")]
-    public float roamSpeed = .5f;     
-    public float roamRadius = 10f;    
-    public float roamDelay = 3f;       
-    private Vector3 roamTarget;        
+    public float roamSpeed = .5f;
+    public float roamRadius = 10f;
+    public float roamDelay = 3f;
+    private Vector3 roamTarget;
     private float roamTimer;
 
     [Header("Light Settings")]
@@ -33,10 +33,11 @@ public class EnemyAi : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        agent.areaMask = NavMesh.AllAreas;
         agent.updateRotation = false;
-        agent.updateUpAxis = false;    
-        transform.position = new Vector3(transform.position.x, 0f, 0f); 
-        roamTimer = roamDelay; 
+        agent.updateUpAxis = false;
+        transform.position = new Vector3(transform.position.x, 0f, 0f);
+        roamTimer = roamDelay;
     }
 
     void Update()
@@ -98,13 +99,11 @@ public class EnemyAi : MonoBehaviour
         FlipSprite();
         LockRotation();
     }
-
     void LockRotation()
     {
         Vector3 currentRotation = transform.rotation.eulerAngles;
         transform.rotation = Quaternion.Euler(0f, 0f, currentRotation.z);
     }
-
     void Roam()
     {
         if (agent.remainingDistance <= agent.stoppingDistance && !agent.pathPending)
@@ -121,7 +120,6 @@ public class EnemyAi : MonoBehaviour
         }
         agent.speed = roamSpeed;
     }
-
     void SetRoamTarget()
     {
         Vector3 randomDirection = Random.insideUnitSphere * roamRadius;
@@ -144,7 +142,6 @@ public class EnemyAi : MonoBehaviour
         isChasing = false;
         agent.ResetPath();
     }
-
     void FlipSprite()
     {
         if (agent.velocity.x > 0.1f)
@@ -156,15 +153,15 @@ public class EnemyAi : MonoBehaviour
             transform.localScale = new Vector3(-0.5f, 0.5f, 0.5f);
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-            if (collision.collider.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
+        {
+            PlayerStats playerStats = collision.GetComponent<PlayerStats>();
+            if (playerStats != null)
             {
-                PlayerStats playerStats = collision.collider.GetComponent<PlayerStats>();
-                if (playerStats != null)
-                {
-                    playerStats.TakeDamage(1f);
-                }
+                playerStats.TakeDamage(1f); 
             }
         }
     }
+}

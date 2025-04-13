@@ -10,7 +10,6 @@ public class PickUp : MonoBehaviour
     private PlayerInteractions playerInt;
     private PlayerBodyChanges playerUpdate;
     private Inventory pInven;
-
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -31,7 +30,6 @@ public class PickUp : MonoBehaviour
             }
         }
     }
-
     void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -40,7 +38,6 @@ public class PickUp : MonoBehaviour
             errorUI.SetActive(false);
         }
     }
-
     public void end()
     {
         playerUpdate.carryPart(bodyPartNum);

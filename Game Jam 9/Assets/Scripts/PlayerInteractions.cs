@@ -18,10 +18,8 @@ public class PlayerInteractions : MonoBehaviour
     {
         inven = GetComponent<Inventory>();
     }
-
     void Update()
     {
-        //Debug.Log("player interaction update call");
         if (isPickUp) {
             if (currItem != null)
             {
@@ -103,7 +101,6 @@ public class PlayerInteractions : MonoBehaviour
         progressBar.size = 0;
         holdProg = 0;
     }
-
     public void staticInteract(Embodier emb)
     {
         Debug.Log("item recieved");
@@ -114,10 +111,8 @@ public class PlayerInteractions : MonoBehaviour
         progressBar.size = 0;
         holdProg = 0;
     }
-    
     public void clearInteraction()
     {
-        //progressBar.size = 0;
         holdProg = 0;
         hasPickUp = false;
     }

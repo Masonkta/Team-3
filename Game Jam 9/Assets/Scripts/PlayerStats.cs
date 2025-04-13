@@ -44,6 +44,7 @@ public class PlayerStats : MonoBehaviour
         {
             noiseLevel -= noiseDecayRate * Time.deltaTime;
             noiseLevel = Mathf.Clamp(noiseLevel, 0f, maxNoiseLevel);
+            Debug.Log("noise not 0");
         }
 
         if (noiseCollider != null)
