@@ -138,11 +138,20 @@ public class BossScript : MonoBehaviour
         targetPlayer = player;
         playerStats = player.GetComponent<PlayerStats>();
         isChasing = true;
+        //SoundManager.instance.Play("Chains");
+        if (SoundManager.instance == true)
+        {
+            SoundManager.instance.Play("Chains");
+        }
     }
     public void StopChasing()
     {
         isChasing = false;
         agent.ResetPath();
+        if (SoundManager.instance == true)
+        {
+            SoundManager.instance.Stop("Chains");
+        }
     }
     void FlipSprite()
     {

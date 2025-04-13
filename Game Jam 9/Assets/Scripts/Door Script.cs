@@ -82,6 +82,7 @@ public class DoorScript : MonoBehaviour
 
                 if (progressBar != null)
                     progressBar.size = holdTimer / holdDuration;
+                    SoundManager.instance.Play("Rummaging");
 
                 if (holdTimer >= holdDuration)
                 {
@@ -101,6 +102,7 @@ public class DoorScript : MonoBehaviour
             {
                 UpdateDoorState(!isOpen);
                 playerStats.AddNoise(kickNoise);
+                SoundManager.instance.Play("KickDoor");
             }
         }
     }
@@ -113,7 +115,17 @@ public class DoorScript : MonoBehaviour
     {
         isOpen = open;
         if (doorClosed != null) doorClosed.SetActive(!isOpen);
+        
         if (doorOpen != null) doorOpen.SetActive(isOpen);
+        
+        if (doorOpen.activeSelf)
+        {
+            SoundManager.instance.Play("OpenDoor");
+        }
+        if (doorClosed.activeSelf)
+        {
+            SoundManager.instance.Play("ClosedDoor");
+        }
 
         UpdateUI();
     }
