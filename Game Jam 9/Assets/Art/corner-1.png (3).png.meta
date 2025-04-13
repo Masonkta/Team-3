@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 551d3b8c105dd444a962440404b9c734
+guid: 6eec59d8b00246541ab3ea46955d6794
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7240717952359216916
-    second: Bottom Left Wall Corner-1.png (1)_0
+      213: -7262891762998913767
+    second: corner-1.png (3)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,12 +37,12 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 2
     aniso: 1
     mipBias: 0
-    wrapU: 1
-    wrapV: 1
-    wrapW: 1
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 15
+  spritePixelsToUnits: 70
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bottom Left Wall Corner-1.png (1)_0
+      name: corner-1.png (3)_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 24
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4173a2d5d923c7460800000000000000
-      internalID: 7240717952359216916
+      spriteID: 915d6580c66053b90800000000000000
+      internalID: -7262891762998913767
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Bottom Left Wall Corner-1.png (1)_0: 7240717952359216916
+      corner-1.png (3)_0: -7262891762998913767
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
