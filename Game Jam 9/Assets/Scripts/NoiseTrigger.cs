@@ -10,6 +10,8 @@ public class NoiseTrigger : MonoBehaviour
     public AudioSource audioSource;
     public PlayerStats playerStats;
 
+    public GameObject targetPlayer;
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -21,10 +23,10 @@ public class NoiseTrigger : MonoBehaviour
         audioSource.playOnAwake = false;
         audioSource.loop = false;
 
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (player != null)
+        targetPlayer = GameObject.FindGameObjectWithTag("Player");
+        if (targetPlayer != null)
         {
-            playerStats = player.GetComponent<PlayerStats>();
+            playerStats = targetPlayer.GetComponent<PlayerStats>();
         }
     }
 
@@ -52,11 +54,19 @@ public class NoiseTrigger : MonoBehaviour
         {
             enemyAI.StopChasing();
         }
-    }
 
+        if (other.CompareTag("Boss"))
+        {
+            BossScript BossAi = other.GetComponent<BossScript>();
+            if (BossAi != null)
+            {
+                BossAi.StopChasing();
+            }
+        }
+    }
     void PlayMonsterReactionSound()
     {
-        if (playerStats == null) return;
+        if (playerStats == null || targetPlayer == null) return;
 
         AudioClip selectedClip = null;
         switch (playerStats.CurrentNoiseCategory)
@@ -74,7 +84,15 @@ public class NoiseTrigger : MonoBehaviour
 
         if (selectedClip != null && !audioSource.isPlaying)
         {
-            audioSource.PlayOneShot(selectedClip);
+            float distance = Vector3.Distance(transform.position, targetPlayer.transform.position);
+
+            float minVolume = 0.1f;
+            float maxVolume = 1f;
+
+            float volume = Mathf.Clamp01(1f - (distance));
+            volume = Mathf.Lerp(minVolume, maxVolume, volume);
+
+            audioSource.PlayOneShot(selectedClip, volume);
         }
     }
 }
