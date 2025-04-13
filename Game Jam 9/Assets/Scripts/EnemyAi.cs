@@ -163,7 +163,7 @@ public class EnemyAi : MonoBehaviour
                 PlayerStats playerStats = collision.collider.GetComponent<PlayerStats>();
                 if (playerStats != null)
                 {
-                    playerStats.TakeDamage(1f);
+                    playerStats.TakeDamage(5f);
                 }
             }
         }
