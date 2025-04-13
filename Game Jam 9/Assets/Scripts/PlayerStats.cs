@@ -3,8 +3,10 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour
 {
     [Header("Vitals")]
+    public float MaxHealth = 100f;
     public float Health = 100f;
-    public float stamina = 100f;
+    public float MaxStamina = 100f;
+    public float Stamina = 100f;
 
     [Header("Noise")]
     public float noiseLevel = 0f;
