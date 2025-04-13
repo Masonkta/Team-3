@@ -4,13 +4,29 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
-    public Image targetImage;
+    public Image activeImage;
+    public Image inactiveImage;
+    public Slider volumeSlider;
+
+    public void Start()
+    {
+        if (volumeSlider != null)
+        {
+            volumeSlider.value = 0;
+            volumeSlider.onValueChanged.AddListener(SetVolume);
+        }
+    }
     public void ToggleImage()
     {
-        if (targetImage != null)
+            bool isCurrentlyActive = activeImage.gameObject.activeSelf;
+            activeImage.gameObject.SetActive(!isCurrentlyActive);
+            inactiveImage.gameObject.SetActive(isCurrentlyActive);
+
+        if (inactiveImage.gameObject.activeSelf)
         {
-            bool isCurrentlyActive = targetImage.gameObject.activeSelf;
-            targetImage.gameObject.SetActive(!isCurrentlyActive);
+            AudioListener.volume = 0f;
+            PlayerPrefs.SetFloat("MasterVolume", 0f);
+            PlayerPrefs.Save();
         }
     }
     public void LoadScene(string sceneName)
@@ -29,5 +45,11 @@ public class UIManager : MonoBehaviour
     public void GoToMainGame()
     {
         LoadScene("Main Scene");
+    }
+    public void SetVolume(float volume)
+    {
+        AudioListener.volume = volume;
+        PlayerPrefs.SetFloat("MasterVolume", volume);
+        PlayerPrefs.Save();
     }
 }

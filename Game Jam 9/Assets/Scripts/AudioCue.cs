@@ -13,6 +13,8 @@ public class AudioCue : MonoBehaviour
 
     void Start()
     {
+        float savedVolume = PlayerPrefs.GetFloat("MasterVolume", 1f);
+        AudioListener.volume = savedVolume;
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = cueClip;
 
