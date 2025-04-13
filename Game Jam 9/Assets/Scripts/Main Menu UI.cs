@@ -44,7 +44,7 @@ public class UIManager : MonoBehaviour
     }
     public void GoToMainGame()
     {
-        LoadScene("Main Scene");
+        LoadScene("Level_One");
     }
     public void SetVolume(float volume)
     {
