@@ -99,11 +99,11 @@ public class PlayerBodyChanges : MonoBehaviour
         torso.SetActive(false);
         fullbody.SetActive(false);
         // adjust hitbox
-        gameObject.GetComponent<CapsuleCollider2D>().size = new Vector2(0.8f, 0.1f);
-        gameObject.GetComponent<CapsuleCollider2D>().offset = new Vector2(0.055f, -0.25f);
+        gameObject.GetComponent<CapsuleCollider2D>().size = new Vector2(0.65f, 0.65f);
+        gameObject.GetComponent<CapsuleCollider2D>().offset = new Vector2(0.03f, 0f);
         // adjust interact zone
-        gameObject.GetComponent<CircleCollider2D>().radius = 0.7f;
-        gameObject.GetComponent<CircleCollider2D>().offset = new Vector2(0, -0.3f);
+        gameObject.GetComponent<CircleCollider2D>().radius = 0.4f;
+        gameObject.GetComponent<CircleCollider2D>().offset = new Vector2(0.03f, 0f);
     }
     public void addHead()
     {
@@ -113,11 +113,11 @@ public class PlayerBodyChanges : MonoBehaviour
         torso.SetActive(false);
         fullbody.SetActive(false);
         // adjust hitbox
-        gameObject.GetComponent<CapsuleCollider2D>().size = new Vector2(0.7f, 0.9f);
-        gameObject.GetComponent<CapsuleCollider2D>().offset = new Vector2(0.04f, -0.05f);
+        gameObject.GetComponent<CapsuleCollider2D>().size = new Vector2(0.7f, 0.88f);
+        gameObject.GetComponent<CapsuleCollider2D>().offset = new Vector2(-0.0097f, 0.019f);
         // adjust interact zone
-        gameObject.GetComponent<CircleCollider2D>().radius = 0.7f;
-        gameObject.GetComponent<CircleCollider2D>().offset = new Vector2(0.035f, -0.1f);
+        gameObject.GetComponent<CircleCollider2D>().radius = 0.52f;
+        gameObject.GetComponent<CircleCollider2D>().offset = new Vector2(0,0);
     }
     public void addTorsoHead()
     {
@@ -127,11 +127,11 @@ public class PlayerBodyChanges : MonoBehaviour
         torso.SetActive(false);
         fullbody.SetActive(false);
         // adjust hitbox
-        gameObject.GetComponent<CapsuleCollider2D>().size = new Vector2(0.9f, 2.2f);
-        gameObject.GetComponent<CapsuleCollider2D>().offset = new Vector2(0.045f, -0.07f);
+        gameObject.GetComponent<CapsuleCollider2D>().size = new Vector2(0.857f, 1.4f);
+        gameObject.GetComponent<CapsuleCollider2D>().offset = new Vector2(-0.008f, -0.31f);
         // adjust interact zone
-        gameObject.GetComponent<CircleCollider2D>().radius = 0.95f;
-        gameObject.GetComponent<CircleCollider2D>().offset = new Vector2(0.03f, -0.35f);
+        gameObject.GetComponent<CircleCollider2D>().radius = 0.65f;
+        gameObject.GetComponent<CircleCollider2D>().offset = new Vector2(0f, -0.4f);
         // adjust sight light
         //gameObject.GetComponent<Light2D>().transform.position = new Vector3(-0.2f, 0f);
     }
@@ -143,11 +143,11 @@ public class PlayerBodyChanges : MonoBehaviour
         torso.SetActive(true);
         fullbody.SetActive(false);
         // adjust hitbox
-        gameObject.GetComponent<CapsuleCollider2D>().size = new Vector2(0.9f, 2.2f);
-        gameObject.GetComponent<CapsuleCollider2D>().offset = new Vector2(0.045f, -0.07f);
+        gameObject.GetComponent<CapsuleCollider2D>().size = new Vector2(0.857f, 1.4f);
+        gameObject.GetComponent<CapsuleCollider2D>().offset = new Vector2(-0.008f, -0.31f);
         // adjust interact zone
-        gameObject.GetComponent<CircleCollider2D>().radius = 0.95f;
-        gameObject.GetComponent<CircleCollider2D>().offset = new Vector2(0.03f, -0.35f);
+        gameObject.GetComponent<CircleCollider2D>().radius = 0.65f;
+        gameObject.GetComponent<CircleCollider2D>().offset = new Vector2(0f, -0.4f);
         // adjust sight light
         //gameObject.GetComponent<Light2D>().transform.position = new Vector3(-0.2f, 0f);
     }
@@ -159,10 +159,10 @@ public class PlayerBodyChanges : MonoBehaviour
         torso.SetActive(false);
         fullbody.SetActive(true);
         // adjust hitbox
-        gameObject.GetComponent<CapsuleCollider2D>().size = new Vector2(0.9f, 2.25f);
-        gameObject.GetComponent<CapsuleCollider2D>().offset = new Vector2(0.04f, -0.55f);
+        gameObject.GetComponent<CapsuleCollider2D>().size = new Vector2(0.857f, 1.4f);
+        gameObject.GetComponent<CapsuleCollider2D>().offset = new Vector2(-0.008f, -0.31f);
         // adjust interact zone
-        gameObject.GetComponent<CircleCollider2D>().radius = 0.95f;
-        gameObject.GetComponent<CircleCollider2D>().offset = new Vector2(0.03f, -0.35f);
+        gameObject.GetComponent<CircleCollider2D>().radius = 0.69f;
+        gameObject.GetComponent<CircleCollider2D>().offset = new Vector2(0f, -0.4f);
     }
 }
