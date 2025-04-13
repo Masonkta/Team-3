@@ -79,4 +79,14 @@ public class PlayerStats : MonoBehaviour
     {
         Debug.Log("Player died!");
     }
+
+    public void ReduceStamina(float amount)
+    {
+        Stamina = Mathf.Max(0f, Stamina - amount);
+    }
+
+    public void RegenStamina(float amount)
+    {
+        Stamina = Mathf.Min(MaxStamina, Stamina + amount);
+    }
 }
