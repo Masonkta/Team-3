@@ -149,11 +149,11 @@ public class EnemyAi : MonoBehaviour
 {
     if (agent.velocity.x > 0.1f)
     {
-        transform.localScale = new Vector3(1.5f, 1.5f, 1.5f); // Facing right
+        transform.localScale = new Vector3(0.5f, 0.5f, 0.5f); // Facing right
     }
     else if (agent.velocity.x < -0.1f)
     {
-        transform.localScale = new Vector3(-1.5f, 1.5f, 1.5f); // Facing left
+        transform.localScale = new Vector3(-0.5f, 0.5f, 0.5f); // Facing left
     }
 }
 }
