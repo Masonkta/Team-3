@@ -47,12 +47,12 @@ public class Movement : MonoBehaviour
         if (moveInput.x < 0)
         {
             // goin left
-            transform.localScale = new Vector3(-1, 1, 1);
+            transform.localScale = new Vector3(-1.5f, 1.5f, 1.5f);
         }
         else if (moveInput.x > 0)
         {
             // goin right
-            transform.localScale = new Vector3(1, 1, 1);
+            transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
         }
 
         light2d.transform.localScale = new Vector3(1, 1, 1);
