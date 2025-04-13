@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FinalDoor : MonoBehaviour
 {
@@ -37,6 +38,6 @@ public class FinalDoor : MonoBehaviour
     }
     public void end()
     {
-        Debug.Log("THE GAME ENDS");
+        SceneManager.LoadScene("VictoryScreen");
     }
 }
