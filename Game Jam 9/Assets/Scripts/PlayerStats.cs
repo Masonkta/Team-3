@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -80,6 +81,7 @@ public class PlayerStats : MonoBehaviour
     {
         SoundManager.instance.Play("PlayerDeath");
         Debug.Log("Player died!");
+        SceneManager.LoadScene("GameOver");
     }
 
     public void ReduceStamina(float amount)
